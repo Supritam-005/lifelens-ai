@@ -1,4 +1,4 @@
-🚀 LifeLens AI
+🚀 LifeLens AI:-
 An eligibility discovery platform that helps citizens find relevant government schemes based on income and state.
 
 📌 Problem
