@@ -38,8 +38,7 @@ Scalable backend structure
 
 
 📂 Project Structure
-pgsql
-Copy code
+
 lifelens-ai/
 │
 ├── app.py
