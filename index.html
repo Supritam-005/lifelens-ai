@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeLens AI</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f4f6f8;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        input {
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🚀 LifeLens AI</h1>
+<h3>Check Scheme Eligibility</h3>
+
+<label>Income:</label><br>
+<input type="number" id="income"><br>
+
+<label>State:</label><br>
+<input type="text" id="state"><br><br>
+
+<button onclick="checkEligibility()">Check Eligibility</button>
+
+<div class="card">
+    <h3>Results:</h3>
+    <div id="result">No results yet.</div>
+</div>
+
+<script>
+async function checkEligibility() {
+    let income = document.getElementById("income").value;
+    let state = document.getElementById("state").value;
+
+    let response = await fetch("/check", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            income: parseInt(income),
+            state: state
+        })
+    });
+
+    let data = await response.json();
+
+    let resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
+
+    if (data.eligible_schemes.length === 0) {
+        resultDiv.innerHTML = "<p>No schemes found.</p>";
+    } else {
+        data.eligible_schemes.forEach(scheme => {
+            resultDiv.innerHTML += `
+                <div style="margin-bottom:15px;">
+                    <strong>${scheme.name}</strong><br>
+                    ${scheme.description}
+                </div>
+            `;
+        });
+    }
+}
+</script>
+
+</body>
+</html>
