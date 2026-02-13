@@ -1,22 +1,19 @@
 🚀 LifeLens AI
-An AI-powered eligibility discovery platform that helps citizens find relevant government schemes based on their profile.
+An eligibility discovery platform that helps citizens find relevant government schemes based on income and state.
 
-📌 Problem Statement
-In India, millions of citizens are unaware of government schemes, scholarships, and subsidies they are eligible for.
-Information is scattered, complex, and difficult to navigate.
+📌 Problem
+Many citizens are unaware of government schemes, scholarships, and subsidies they qualify for. Information is scattered and difficult to understand.
 
 💡 Solution
 LifeLens AI simplifies scheme discovery by:
 
-Collecting basic user details (income, state)
+Taking basic user inputs (income and state)
 
-Matching eligibility conditions instantly
+Matching eligibility conditions
 
-Displaying relevant schemes in real time
+Displaying relevant schemes instantly
 
-Providing a clean and simple interface
-
-🛠️ Tech Stack
+🛠 Tech Stack
 Backend: FastAPI (Python)
 
 Frontend: HTML, CSS, JavaScript
@@ -24,37 +21,21 @@ Frontend: HTML, CSS, JavaScript
 Version Control: Git & GitHub
 
 ⚙️ How It Works
-User enters:
+User enters income and state
 
-Income
+Backend checks eligibility rules
 
-State
-
-Backend processes eligibility rules
-
-Matching schemes are returned instantly
+Matching schemes are returned in real time
 
 🚀 Features
 Real-time eligibility checking
 
 Rule-based matching engine
 
-Scalable backend architecture
+Simple and clean user interface
 
-Simple and user-friendly UI
+Scalable backend structure
 
-🔮 Future Scope
-ML-based eligibility prediction
-
-Fuzzy matching for spelling errors
-
-City-to-state auto detection
-
-Document checklist generator
-
-Multilingual support
-
-Mobile app integration
 
 📂 Project Structure
 pgsql
@@ -64,29 +45,15 @@ lifelens-ai/
 ├── app.py
 ├── index.html
 └── README.md
-▶️ How To Run Locally
-Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/Supritam-005/lifelens-ai.git
-Navigate to project folder:
 
-bash
-Copy code
-cd lifelens-ai
-Install dependencies:
 
-nginx
-Copy code
-pip install fastapi uvicorn
-Run the server:
 
-lua
-Copy code
-python -m uvicorn app:app --reload
-Open in browser:
+▶️ Run Locally
+Clone the repository: git clone https://github.com/Supritam-005/lifelens-ai.git
 
-cpp
-Copy code
-http://127.0.0.1:8000
+Navigate to folder:pip install fastapi uvicorn
+
+Run the server: python -m uvicorn app:app --reload
+
+
